@@ -1,1 +1,31 @@
-/* oops */
+/* holding */
+
+.top {
+    background-color: chocolate;
+    color: white;
+    margin: 0;
+}
+
+.rules {
+    background-color: pink;
+    color: darkblue;
+    font-size: .8em;
+}
+
+.targetNum {
+    background-color: springgreen;
+    font-size: 1.5em;
+    color: purple;
+}
+
+.win-lose {
+    background-color: aquamarine;
+    font-size: 1.1;
+    color: blue;
+}
+
+.score {
+    background-color: slategray;
+    font-size: 1.5em;
+    color: white;
+}
