@@ -9,6 +9,7 @@ var losses = 0;
 
 var target = 0;
 var score = 0;
+var currentScore = 0;
 
 // Functions
 
@@ -24,9 +25,9 @@ function reset() {
     $(".star").attr("value", (Math.floor(Math.random() * 12) + 1));
     $(".emerald").attr("value", (Math.floor(Math.random() * 12) + 1));
     $(".sapphire").attr("value", (Math.floor(Math.random() * 12) + 1));
-    $(".targetNum").html(target);
+    $(".targetNum").html("Target: " + target);
     $(".winLose").html("<p>Wins: " + wins + "</p>" + "<p>Losses: " + losses + "</p>");
-    $(".score").html(score);
+    $(".score").html("Score: " + currentScore);
     console.log("reset");
 }
 
@@ -38,15 +39,20 @@ reset();
 
 function gem() {
 
-    score += parseInt($(this).attr("value"));
-    $(".score").html(score);
-    if (score == targetNumber) {
+    currentScore += parseInt($(this).attr("value"));
+    $(".score").html("Score: " + currentScore);
+    if (currentScore == target) {
         wins++;
         reset();
     }
-    else if (score > targetNumber) {
+    else if (currentScore > target) {
         losses++;
         reset();
     };
 };
 
+$(".gem").click(function() {
+    $(".score").html("Score: " + (currentScore = currentScore + (this.value)));
+    gem();
+    console.log(this);
+});
